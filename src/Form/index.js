@@ -1,21 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Header, Input, Select, Button } from "./styled";
 import currencies from "../currencies";
 
 const Form = ({ calculateResult, showOnClick }) => {
 
+
     const [amount, setAmount] = useState("");
     const [inputCurrency, setInputCurrency] = useState(currencies[0].code);
     const [outputCurrency, setOutputCurrency] = useState(currencies[1].code);
     const [showResult, setShowResult] = useState(true);
-
+    const inputRef = useRef(null);
+    
     const onFormSubmit = (event) => {
         event.preventDefault();
-
         calculateResult(inputCurrency, outputCurrency, amount);
-
         setShowResult(prev => !prev)
-    }
+        inputRef.current.focus();
+    };
 
     return (
         <form onSubmit={onFormSubmit}>
@@ -25,6 +26,7 @@ const Form = ({ calculateResult, showOnClick }) => {
                         Kwota do przeliczenia:
                     </Header>
                     <Input
+                        ref={inputRef}
                         value={amount}
                         onChange={({ target }) => setAmount(target.value)}
                         placeholder="Podaj kwotę"
