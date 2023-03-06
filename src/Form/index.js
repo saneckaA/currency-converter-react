@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style.css"
+import { Header, Input, Select, Button } from "./styled";
 import currencies from "../currencies";
 
 const Form = ({ calculateResult, showOnClick }) => {
@@ -21,14 +21,13 @@ const Form = ({ calculateResult, showOnClick }) => {
         <form onSubmit={onFormSubmit}>
             <p>
                 <label>
-                    <span className="form__labelText">
+                    <Header>
                         Kwota do przeliczenia:
-                    </span>
-                    <input
+                    </Header>
+                    <Input
                         value={amount}
                         onChange={({ target }) => setAmount(target.value)}
                         placeholder="Podaj kwotę"
-                        className="form__field"
                         required
                         type="number"
                         step="0.01"
@@ -38,11 +37,10 @@ const Form = ({ calculateResult, showOnClick }) => {
             </p>
             <p>
                 <label>
-                    <span className="form__labelText">
+                    <Header>
                         Waluta wejściowa:
-                    </span>
-                    <select
-                        className="form__select"
+                    </Header>
+                    <Select
                         value={inputCurrency}
                         onChange={({ target }) => setInputCurrency(target.value)}
                     >
@@ -54,15 +52,15 @@ const Form = ({ calculateResult, showOnClick }) => {
                                 {inputCurrency.name}
                             </option>
                         )))}
-                    </select>
+                    </Select>
                 </label>
             </p>
             <p>
                 <label>
-                    <span className="form__labelText">
+                    <Header>
                         Waluta wyjściowa:
-                    </span>
-                    <select className="form__select"
+                    </Header>
+                    <Select
                         value={outputCurrency}
                         onChange={({ target }) => setOutputCurrency(target.value)}
                     >
@@ -74,13 +72,16 @@ const Form = ({ calculateResult, showOnClick }) => {
                                 {outputCurrency.name}
                             </option>
                         )))}
-                    </select>
+                    </Select>
                 </label>
             </p>
             <p>
-                <button
+                <Button
                     onClick={showOnClick}
-                    className="form__button">Sprawdź kurs</button>
+                    className="form__button"
+                >
+                    Sprawdź kurs
+                </Button>
             </p>
         </form>
     )

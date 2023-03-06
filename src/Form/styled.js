@@ -1,4 +1,6 @@
-.form__labelText {
+import styled from "styled-components";
+
+export const Header = styled.span`
     width: 100%;
     max-width: 200px;
     display: inline-block;
@@ -6,15 +8,13 @@
     text-align: justify;
     font-size: 18px;
     font-weight: bold;
-}
 
-@media (max-width: 768px) {
-    .form__labelText {
+    @media (max-width: 767px) {
         margin-left: 25px;
     }
-}
+`;
 
-.form__field {
+export const Input = styled.input`
     margin-left: 8px;
     padding: 3px;
     border-radius: 25px;
@@ -23,19 +23,17 @@
     width: 100%;
     max-width: 250px;
     text-align: center;
-}
 
-@media (max-width: 768px) {
-    .form__field {
+    &:invalid {
+        background-color: hsl(348, 83%, 87%);
+    }
+
+    @media (max-width: 767px) {
         max-width: 220px;
     }
-}
+`;
 
-.form__field:invalid {
-    background-color: hsl(348, 83%, 87%);
-}
-
-.form__select {
+export const Select = styled.select`
     margin-left: 8px;
     padding: 3px;
     border-radius: 25px;
@@ -44,15 +42,13 @@
     max-width: 250px;
     text-align: center;
     background-color: white;
-}
 
-@media (max-width: 768px) {
-    .form__select {
+    @media (max-width: 767px) {
         max-width: 220px;
     }
-}
+`;
 
-.form__button {
+export const Button = styled.button`
     border-radius: 25px;
     border: none;
     width: 500px;
@@ -61,16 +57,14 @@
     transition: 1s;
     margin-top: 10px;
     box-shadow: 0px 0px 31px 11px rgba(0, 0, 0);
-}
 
-.form__button:hover {
-    background-color: rgb(209, 204, 177);
-    transform: scale(1.1);
-}
+    &:hover {
+        background-color: rgb(209, 204, 177);
+        transform: scale(1.1);
+    }
 
-@media (max-width: 768px) {
-    .form__button {
+    @media (max-width: 767px) {
         max-width: 240px;
         margin-top: 20px;
     }
-}
+`;
