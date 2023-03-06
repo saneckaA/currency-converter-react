@@ -1,36 +1,36 @@
-.grid__container {
+import styled, {css} from "styled-components";
+
+export const GridContainer = styled.div`
     display: grid;
     grid-template-columns: 600px 300px;
     padding: 80px;
-}
 
-@media (max-width: 768px) {
-    .grid__container {
+    @media (max-width: 767px) {
         grid-template-columns: 300px;
     }
-}
+`;
 
-.grid__item {
+export const Item = styled.div`
     padding: 20px;
     background: rgba(211, 197, 153, 0.8);
     color: rgb(32, 31, 31);
     margin: 10px;
     border-radius: 25px;
     box-shadow: 0px 0px 31px 11px rgba(0, 0, 0);
-}
 
-.grid__item--first {
-    min-height: 200px;
-    text-align: center;
-}
+    ${({first}) => first && css`
+        min-height: 200px;
+        text-align: center;
+    `}
 
-.grid__item--last {
+    ${({last}) => last && css`
     min-height: 70px;
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
+    grid-column-start: 3;
+    grid-column-end: 1;
+    `}
+`;
 
-.dayNightButton {
+export const Button = styled.button`
     cursor: pointer;
     border-radius: 50%;
     border: none;
@@ -44,12 +44,8 @@
     align-items: center;
     box-shadow: 0px 0px 31px 11px rgba(0, 0, 0);
     transition: 1s;
-}
 
-.dayNightButton:hover {
-    transform: scale(1.1);
-}
-
-
-
-
+    &:hover {
+        transform: scale(1.1);
+    }
+`;

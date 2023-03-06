@@ -1,4 +1,4 @@
-import "./style.css";
+import { GridContainer, Item, Button } from "./styled";
 import React, { useState } from "react";
 import { CgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi";
@@ -14,28 +14,27 @@ const Container = ({ formContent, resultContent, timeContent, showResult }) => {
     }
 
     return (
-        <div className="grid__container">
-            <div
-                className="grid__item grid__item--first"
+        <GridContainer>
+            <Item
+                first
                 style={{
                     background: color ? 'rgba(211, 197, 153, 0.5)' : 'rgb(41, 39, 39, 0.7)',
                     color: color ? 'rgb(32, 31, 31)' : 'white',
                 }}
             >
-                <button
-                    className="dayNightButton"
+                <Button
                     onClick={handleClick}
                     style={{
                         color: icon ? 'black' : 'white',
                         background: icon ? 'white' : 'black'
                     }}>
                     {icon ? <HiMoon size={25} /> : <CgSun size={25} />}
-                </button>
+                </Button>
                 <p>
                     {formContent}
                 </p>
-            </div>
-            <div className="grid__item grid__item--second"
+            </Item>
+            <Item
                 style={{
                     background: color ? 'rgba(211, 197, 153, 0.5)' : 'rgb(41, 39, 39, 0.7)',
                     color: color ? 'rgb(32, 31, 31)' : 'white',
@@ -44,18 +43,18 @@ const Container = ({ formContent, resultContent, timeContent, showResult }) => {
                 <p>
                     {timeContent}
                 </p>
-            </div>
+            </Item>
             {
                 showResult ?
-                    <div
-                        className="grid__item grid__item--last"
+                    <Item
+                        last
                         style={{ background: color ? 'rgba(211, 197, 153, 0.5)' : 'rgb(41, 39, 39, 0.7)', color: color ? 'rgb(32, 31, 31)' : 'white', }}
                     >
                         {resultContent}
-                    </div>
+                    </Item>
                     : null
             }
-        </div>
+        </GridContainer>
     )
 };
 
