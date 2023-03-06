@@ -1,8 +1,8 @@
-import "./style.css"
+import { StyledHeader } from "./styled";
 
 const Header = () => (
     <header>
-        <h1 className="header">Pzelicznik walut</h1>
+        <StyledHeader>Pzelicznik walut</StyledHeader>
     </header>
 )
 
