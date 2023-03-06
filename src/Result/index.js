@@ -1,15 +1,15 @@
-import "./style.css"
+import { ResultContainer } from "./styled";
 
 const Result = ({ result, }) => (
 
-    <p className="result">
+    <ResultContainer>
         {result !== undefined && (
             <>
                {result.inputAmount.toFixed(2)} {result.inputCurrency} =&nbsp; 
                <strong>{result.outputAmount.toFixed(2)} {result.outputCurrency}</strong>
             </>
         )}
-    </p>
+    </ResultContainer>
 )
 
 export default Result;
