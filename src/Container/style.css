@@ -1,0 +1,55 @@
+.grid__container {
+    display: grid;
+    grid-template-columns: 600px 300px;
+    padding: 80px;
+}
+
+@media (max-width: 768px) {
+    .grid__container {
+        grid-template-columns: 300px;
+    }
+}
+
+.grid__item {
+    padding: 20px;
+    background: rgba(211, 197, 153, 0.8);
+    color: rgb(32, 31, 31);
+    margin: 10px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 31px 11px rgba(0, 0, 0);
+}
+
+.grid__item--first {
+    min-height: 200px;
+    text-align: center;
+}
+
+.grid__item--last {
+    min-height: 70px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.dayNightButton {
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    height: 35px;
+    width: 35px; 
+    font-size: 25px;
+    margin-right: 600px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 31px 11px rgba(0, 0, 0);
+    transition: 1s;
+}
+
+.dayNightButton:hover {
+    transform: scale(1.1);
+}
+
+
+
+

@@ -1,0 +1,30 @@
+.hour {
+    text-align: center;
+    font-size: 50px;
+}
+
+.weekday {
+    text-align: center;
+    font-size: 25px;
+}
+
+.day {
+    text-align: center;
+    font-size: 100px;
+    transition: 1s;
+}
+
+.day:hover {
+    transform: rotate(360deg);
+}
+
+.month {
+    text-align: center;
+    font-size: 30px;
+}
+
+.year {
+    text-align: center;
+    font-size: 25px;
+    padding-top: 15px;
+}
