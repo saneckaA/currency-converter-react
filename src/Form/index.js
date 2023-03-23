@@ -4,13 +4,12 @@ import currencies from "../currencies";
 
 const Form = ({ calculateResult, showOnClick }) => {
 
-
     const [amount, setAmount] = useState("");
     const [inputCurrency, setInputCurrency] = useState(currencies[0].code);
     const [outputCurrency, setOutputCurrency] = useState(currencies[1].code);
     const [showResult, setShowResult] = useState(true);
     const inputRef = useRef(null);
-    
+
     const onFormSubmit = (event) => {
         event.preventDefault();
         calculateResult(inputCurrency, outputCurrency, amount);
@@ -78,12 +77,7 @@ const Form = ({ calculateResult, showOnClick }) => {
                 </label>
             </p>
             <p>
-                <Button
-                    onClick={showOnClick}
-                    className="form__button"
-                >
-                    Sprawdź kurs
-                </Button>
+                <Button onClick={showOnClick}> Sprawdź kurs </Button>
             </p>
         </form>
     )
