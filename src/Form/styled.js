@@ -19,7 +19,7 @@ export const Input = styled.input`
     padding: 3px;
     border-radius: 25px;
     border: none;
-    background-color: white;
+    background-color: rgb(255, 255, 255, 0.6);
     width: 100%;
     max-width: 250px;
     text-align: center;
@@ -41,7 +41,7 @@ export const Select = styled.select`
     width: 100%;
     max-width: 250px;
     text-align: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255, 0.6);
 
     @media (max-width: 767px) {
         max-width: 220px;
@@ -49,11 +49,11 @@ export const Select = styled.select`
 `;
 
 export const Button = styled.button`
-    border-radius: 25px;
+    border-radius: 10px;
     border: none;
     width: 500px;
     padding: 5px;
-    background-color: white;
+    background-color: rgb(255, 255, 255, 0.6);
     transition: 1s;
     margin-top: 10px;
     box-shadow: 0px 0px 31px 11px rgba(0, 0, 0);
