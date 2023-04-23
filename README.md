@@ -7,7 +7,7 @@ After clicking the button "Sprawdź kurs" the result will be shown.
 You can also toggle between day and night mode in this app.
 
 ## How it works:
-![]()
+![](https://github.com/saneckaA/currency-converter-react/blob/main/images/currency-converter-animation.gif?raw=true)
 
 ## You can check it out here:
 
