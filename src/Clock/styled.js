@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Hour = styled.div`
     text-align: center;
     font-size: 50px;
+    padding-top: 30px;
 `;
 
 export const Weekday = styled.div`
