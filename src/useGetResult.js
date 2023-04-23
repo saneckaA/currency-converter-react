@@ -1,10 +1,10 @@
-
 import { useState } from "react";
-import currencies from "./currencies";
+import { useDataRates } from "./useDataRates";
 
 export const useGetResult = () => {
 
     const [result, setResult] = useState();
+    const dataRates = useDataRates();
 
     const [showResult, setShowResult] = useState(false);
 
@@ -13,18 +13,13 @@ export const useGetResult = () => {
     };
 
     const calculateResult = (inputCurrency, outputCurrency, amount) => {
-        const rateInput = currencies
-            .find(({ code }) => code === inputCurrency)
-            .rate;
 
-        const rateOutput = currencies
-            .find(({ code }) => code === outputCurrency)
-            .rate;
+        const rate = ((dataRates.rates[outputCurrency]) / dataRates.rates[inputCurrency]);
 
         setResult({
             inputAmount: +amount,
             inputCurrency,
-            outputAmount: amount * rateInput / rateOutput,
+            outputAmount: amount * rate,
             outputCurrency,
         });
     };

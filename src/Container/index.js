@@ -30,7 +30,6 @@ const Container = ({ formContent, resultContent, timeContent, showResult, button
                 showResult ?
                     <Item
                         last
-
                     >
                         {resultContent}
                     </Item>

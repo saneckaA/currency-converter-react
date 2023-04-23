@@ -15,7 +15,7 @@ export const Item = styled.div`
     background: ${({ theme }) => theme.bodyColor};
     color: ${({ theme }) => theme.textColor};
     margin: 10px;
-    border-radius: 25px;
+    border-radius: 20px;
     box-shadow: 0px 0px 31px 11px rgba(0, 0, 0);
 
     ${({first}) => first && css`
