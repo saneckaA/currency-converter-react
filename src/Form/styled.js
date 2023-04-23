@@ -68,3 +68,13 @@ export const Button = styled.button`
         margin-top: 20px;
     }
 `;
+
+export const Loading = styled.p`
+   color: ${({ theme }) => theme.loadingColor};
+   font-size: 20px;
+   padding-top: 30px;
+`;
+
+export const Failure = styled.p`
+color: ${({ theme }) => theme.failureColor};
+`;
