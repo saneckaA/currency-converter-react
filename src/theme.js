@@ -4,6 +4,9 @@ export const theme = {
         textColor: "rgb(32, 31, 31)",
         iconColor: "black",
         buttonColor: "rgb(255, 255, 255, 0.1)",
+        loadingColor: "black",
+        failureColor: "red",
+        spinnerColor: "black",
     },
 
     darkTheme: {
@@ -11,6 +14,9 @@ export const theme = {
         textColor: "rgb(255, 255, 255)",
         iconColor: "white",
         buttonColor: "rgb(4, 4, 12, 0.1)",
+        loadingColor: "white",
+        failureColor: "red",
+        spinnerColor: "white",
     },
 
     breakpoint: {
