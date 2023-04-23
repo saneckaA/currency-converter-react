@@ -1,59 +1,77 @@
 import React, { useState } from 'react';
 import Container from "./Container";
-import Header from './Header';
-import Result from './Result';
-import Form from './Form';
-import currencies from './currencies';
-import Clock from './Clock';
+import Header from "./Header";
+import Result from "./Result";
+import Form from "./Form";
+import Clock from "./Clock";
+import MediaClock from "./MediaClock";
+import SwitchTheme from './SwitchTheme';
+import { GlobalStyle } from './GlobalStyle';
+import { ThemeProvider } from 'styled-components';
+import { theme } from "./theme";
+import { useSwitchTheme } from './useSwitchTheme';
+import { useGetResult } from './useGetResult';
+import { useDataRates } from './useDataRates';
+
 
 function App() {
 
-  const [result, setResult] = useState();
+  const [themes, switchTheme] = useSwitchTheme();
 
-  const [showResult, setShowResult] = useState(false);
 
-  const showOnClick = () => {
-    setShowResult(true);
+  const modeThemes = {
+    light: theme.lightTheme,
+    dark: theme.darkTheme,
   };
 
-  const calculateResult = (inputCurrency, outputCurrency, amount) => {
-    const rateInput = currencies
-      .find(({ code }) => code === inputCurrency)
-      .rate;
+  const {
+    result,
+    showResult,
+    showOnClick,
+    calculateResult,
+  } = useGetResult();
 
-    const rateOutput = currencies
-      .find(({ code }) => code === outputCurrency)
-      .rate;
-
-    setResult({
-      inputAmount: +amount,
-      inputCurrency,
-      outputAmount: amount * rateInput / rateOutput,
-      outputCurrency,
-    });
-  };
+  const {
+    dataRates
+  } = useDataRates();
 
   return (
-    <Container
-      showResult={showResult}
-      formContent={
-        <>
-          <Header />
-          <Form
-            calculateResult={calculateResult}
-            showOnClick={showOnClick}
-          />
-        </>
-      }
-      timeContent={
-        <Clock/>
-      }
-      resultContent={
-        <Result
-          result={result}
+    <ThemeProvider theme={themes === "light" ? theme.lightTheme : theme.darkTheme}>
+      <>
+        <GlobalStyle />
+        <Container
+          showResult={showResult}
+          mediaTimeContent={
+            <MediaClock />
+          }
+          buttonContent={
+            <SwitchTheme
+              switchTheme={switchTheme}
+            />
+          }
+          formContent={
+            <>
+              <Header />
+              <Form
+                calculateResult={calculateResult}
+                showOnClick={showOnClick}
+
+
+
+              />
+            </>
+          }
+          timeContent={
+            <Clock />
+          }
+          resultContent={
+            <Result
+              result={result}
+            />
+          }
         />
-      }
-    />
+      </>
+    </ThemeProvider>
   )
 };
 
