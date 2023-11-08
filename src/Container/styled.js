@@ -16,7 +16,7 @@ export const Item = styled.div`
     color: ${({ theme }) => theme.textColor};
     margin: 10px;
     border-radius: 20px;
-    box-shadow: 0px 0px 31px 11px rgba(0, 0, 0);
+    box-shadow: 0px 0px 21px 11px rgba(0, 0, 0);
 
     ${({first}) => first && css`
         min-height: 200px;

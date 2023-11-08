@@ -23,6 +23,7 @@ export const Input = styled.input`
     width: 100%;
     max-width: 250px;
     text-align: center;
+    box-shadow: 0px 0px 21px 11px rgba(0, 0, 0);
 
     &:invalid {
         background-color: hsl(348, 83%, 87%);
@@ -42,6 +43,7 @@ export const Select = styled.select`
     max-width: 250px;
     text-align: center;
     background-color: rgb(255, 255, 255, 0.6);
+    box-shadow: 0px 0px 21px 11px rgba(0, 0, 0);
 
     @media (max-width: 767px) {
         max-width: 220px;
@@ -56,7 +58,7 @@ export const Button = styled.button`
     background-color: rgb(255, 255, 255, 0.6);
     transition: 1s;
     margin-top: 10px;
-    box-shadow: 0px 0px 31px 11px rgba(0, 0, 0);
+    box-shadow: 0px 0px 21px 11px rgba(0, 0, 0);
 
     &:hover {
         background-color: rgb(209, 204, 177);

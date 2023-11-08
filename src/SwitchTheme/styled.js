@@ -13,7 +13,7 @@ export const SwitchButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 0px 31px 11px rgba(0, 0, 0);
+    box-shadow: 0px 0px 21px 11px rgba(0, 0, 0);
     transition: 1s;
 
     &:hover {
