@@ -7,7 +7,7 @@ After clicking the button "Sprawdź kurs" the result will be shown. You can togg
 The application has also been prepared for convenient use on tablets and smartphones.
 
 ## How it works:
-![](https://github.com/saneckaA/currency-converter-react/blob/main/images/currency-converter-animation.gif?raw=true)
+![](https://github.com/saneckaA/currency-converter-react/blob/main/images/currency-animation.gif?raw=true)
 
 ## You can check it out here:
 
@@ -18,8 +18,10 @@ The application has also been prepared for convenient use on tablets and smartph
 - CSS
 - JavaScript (ES6+)
 - React
+- Styled-components
 - create-react-app
-- custom hooks
+- Custom hooks
+- API fetch
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
