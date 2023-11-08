@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useDataRates } from "./useDataRates";
 
 export const useGetResult = () => {
-
     const [result, setResult] = useState();
     const dataRates = useDataRates();
 
@@ -13,15 +12,18 @@ export const useGetResult = () => {
     };
 
     const calculateResult = (inputCurrency, outputCurrency, amount) => {
+        console.log("dataRates.data", dataRates.data);
+        if (dataRates.data && dataRates.data[inputCurrency] && dataRates.data[outputCurrency]) {
+            const rate = ((dataRates.data[outputCurrency].value) / dataRates.data[inputCurrency].value);
+            console.log("rate", rate);
 
-        const rate = ((dataRates.rates[outputCurrency]) / dataRates.rates[inputCurrency]);
-
-        setResult({
-            inputAmount: +amount,
-            inputCurrency,
-            outputAmount: amount * rate,
-            outputCurrency,
-        });
+            setResult({
+                inputAmount: +amount,
+                inputCurrency,
+                outputAmount: +amount * rate,
+                outputCurrency,
+            });
+        }
     };
 
     return {

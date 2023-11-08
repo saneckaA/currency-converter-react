@@ -1,7 +1,6 @@
 import { ResultContainer} from "./styled";
 
-const Result = ({ result, dateContent }) => (
-
+const Result = ({ result }) => (
     <ResultContainer>
         {result !== undefined && (
             <>
