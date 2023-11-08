@@ -2,9 +2,9 @@
 
 ## Description:
 
-This app allows you to convert 5 currencies such as PLN, USD, NZD, WON and EUR. Additionally it shows the current time and date. 
-After clicking the button "Sprawdź kurs" the result will be shown.
-You can also toggle between day and night mode in this app.
+This application allows you to convert currencies that are downloaded from API. Additionally, it shows the current time and date. 
+After clicking the button "Sprawdź kurs" the result will be shown. You can toggle between day and night modes in this app as well. 
+The application has also been prepared for convenient use on tablets and smartphones.
 
 ## How it works:
 ![](https://github.com/saneckaA/currency-converter-react/blob/main/images/currency-converter-animation.gif?raw=true)
@@ -19,6 +19,7 @@ You can also toggle between day and night mode in this app.
 - JavaScript (ES6+)
 - React
 - create-react-app
+- custom hooks
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
