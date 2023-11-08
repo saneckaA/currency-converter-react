@@ -8,7 +8,7 @@ import MediaClock from "./MediaClock";
 import SwitchTheme from './SwitchTheme';
 import { GlobalStyle } from './GlobalStyle';
 import { ThemeProvider } from 'styled-components';
-import { theme } from "./theme";
+import { darkTheme, lightTheme, themes } from "./theme";
 import { useSwitchTheme } from './useSwitchTheme';
 import { useGetResult } from './useGetResult';
 import { useDataRates } from './useDataRates';
@@ -16,13 +16,8 @@ import { useDataRates } from './useDataRates';
 
 function App() {
 
-  const [themes, switchTheme] = useSwitchTheme();
+  const [theme, switchTheme] = useSwitchTheme();
 
-
-  const modeThemes = {
-    light: theme.lightTheme,
-    dark: theme.darkTheme,
-  };
 
   const {
     result,
@@ -36,8 +31,9 @@ function App() {
   } = useDataRates();
 
   return (
-    <ThemeProvider theme={themes === "light" ? theme.lightTheme : theme.darkTheme}>
+  
       <>
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}> 
         <GlobalStyle />
         <Container
           showResult={showResult}
@@ -53,11 +49,9 @@ function App() {
             <>
               <Header />
               <Form
+              showResult={showResult}
                 calculateResult={calculateResult}
                 showOnClick={showOnClick}
-
-
-
               />
             </>
           }
@@ -70,8 +64,9 @@ function App() {
             />
           }
         />
+        </ThemeProvider>
       </>
-    </ThemeProvider>
+
   )
 };
 
